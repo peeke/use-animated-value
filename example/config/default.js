@@ -1,5 +1,8 @@
 module.exports = {
   kaliber: {
-    compileWithBabel: [/@kaliber\//]
+    compileWithBabel: [
+      /@kaliber\//,
+      /react-spring\//
+    ],
   }
 }

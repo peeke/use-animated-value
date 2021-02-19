@@ -23,8 +23,5 @@
   "private": false,
   "license": "MIT",
   "description": "Use react-spring's `<animated.element>` to update the DOM without re-rendering.",
-  "repository": "https://github.com/kaliberjs/library.git",
-  "peerDependencies": {
-    "react-spring": "^8.0.27"
-  }
+  "repository": "https://github.com/kaliberjs/library.git"
 }

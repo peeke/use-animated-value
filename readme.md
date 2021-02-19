@@ -14,8 +14,10 @@ This library provides a way to create such an animated value, which you can use 
 ## Installation
 
 ```
-yarn add @kaliber/use-animated-value
+yarn add react-spring @kaliber/use-animated-value
 ```
+
+_This library is created to be used with React Spring v8_
 
 ## Usage
 This library exposes a `useAnimatedValue` and a `useAnimatedValues` hook. 

@@ -1,9 +1,12 @@
 import { useSprings } from 'react-spring'
 
-const KEY = Symbol()
+const KEY = '__KEY'
 
-export function useAnimatedValue(initialValue) {
-  const [values, set] = useAnimatedValues(1, () => initialValue)
+export function useAnimatedValue(initialValueOrFn) {
+  const [values, set] = useAnimatedValues(
+    1, 
+    () => (typeof initialValueOrFn === 'function') ? initialValueOrFn() : initialValueOrFn
+  )
 
   const setValue = React.useCallback(
     x => { set(() => x) }, 
@@ -30,7 +33,7 @@ export function useAnimatedValues(count, initialValueFn) {
   )
 
   return [
-    values.map(x => x[KEY] || x), 
+    values.map(x => (KEY in x) ? x[KEY] : x), 
     setValues
   ]
 }

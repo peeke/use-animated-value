@@ -15,10 +15,16 @@ import styles  from './App.css'
 
 export default function App() {
   const [animatedProgress, setAnimatedProgress] = useAnimatedValue(0)
-  const [animatedValues, setAnimatedValues] = useAnimatedValues(
+
+  // You can use a function if you your default value is expensive to create
+  // const [animatedProgress, setAnimatedProgress] = useAnimatedValue(() => 0)
+  
+  const [animatedProps, setAnimatedProps] = useAnimatedValues(
     images.length, 
     () => ({ x: 0, scale: 1, opacity: 1 })
   )
+
+  console.log(animatedProgress)
 
   const [sliderRef] = useKeenSlider({
     loop: true,
@@ -26,7 +32,7 @@ export default function App() {
     move(s) {
       const { positions: p, progressTrack } = s.details()
       setAnimatedProgress(progressTrack)
-      setAnimatedValues(i => ({
+      setAnimatedProps(i => ({
         x: p[i].distance * 50,
         scale: 0.7 + 0.3 * p[i].portion,
         opacity: p[i].portion
@@ -39,7 +45,7 @@ export default function App() {
     <div ref={sliderRef} className={styles.app}>
       <div className={styles.slides}>
         {images.map((src, i) => {
-          const { x, scale, opacity } = animatedValues[i]
+          const { x, scale, opacity } = animatedProps[i]
           return (
             <animated.div
               key={i}

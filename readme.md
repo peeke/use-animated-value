@@ -54,7 +54,7 @@ function Component() {
 }
 ```
 
-### Animating multiple values
+### Animating a group of values
 
 If you want to use multiple values in one go, you can provide an object as default value. In this case, the hook returns an object with multiple animated values. The setter also expects to be called with an object, and will be merged with the existing values.
 

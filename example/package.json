@@ -1,10 +1,12 @@
 {
-  "name": "example",
-  "version": "0.0.0",
+  "name": "use-animated-value-example",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@kaliber/build": "^0.0.110"
+    "@kaliber/build": "^0.0.111",
+    "keen-slider": "^5.4.0",
+    "react-spring": "^8.0.27"
   },
   "scripts": {
     "build": "NODE_ENV=production kaliber-build",

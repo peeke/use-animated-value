@@ -1,1 +1,1 @@
-export { hello } from './src/hello'
+export { useAnimatedValue, useAnimatedValues } from './src/useAnimatedValue'
